@@ -3,8 +3,8 @@
 function includeHTML() {
 
 let params = (new URL(document.location)).searchParams;
-let file = params.get("file");
   var z, i, elmnt, file, xhttp;
+ file = params.get("file");
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
