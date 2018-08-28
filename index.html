@@ -1,10 +1,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-
-function nextButton(fileName){
-alert('before');
-      $("#includeContent").load(fileName); 
+var myArr = ["htmlPage.html", "jdkjrejvm.html", "jvmArchitecture.html"];
+var i = 0;
+function nextButton(){
+      if(i >= myArr.length)
+	i = 0;
+      $("#includeContent").load(myArr[i]);
+      i++; 
 }
 
 </script>
@@ -79,7 +82,7 @@ alert('before');
                                                                                 <tr>
                                                                                     <td valign="top" class="TextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
 
-<input type="button" value="Next" onClick="nextButton('htmlPage.html')"/>
+<input type="button" value="Next" onClick="nextButton()"/>
                                                                                        <div id="includeContent"></div> 
 
 
