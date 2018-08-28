@@ -1,6 +1,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="">
 <script>
 function includeHTML(file) {
+
+let params = (new URL(document.location)).searchParams;
+let file = params.get("file");
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
@@ -101,9 +104,11 @@ function includeHTML(file) {
                                                                                 <tr>
                                                                                     <td valign="top" class="TextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
 
-<input type="button" value="Next" onClick="includeHTML('jvmArchitecture.html')"/>
-                                                                                       <div w3-include-html="jdkjrejvm.html"></div> 
-
+<input type="button" value="Next" onClick=""/>
+                                                                                       <div id="w3element" w3-include-html="jdkjrejvm.html"></div> 
+<script>
+includeHTML();
+</script>
 
                                                                                     </td>
                                                                                 </tr>
