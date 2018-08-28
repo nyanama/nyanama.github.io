@@ -1,13 +1,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="">
 <script>
-function includeHTML() {
+function includeHTML(file) {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
   z = document.getElementsByTagName("*");
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     /*search for elements with a certain atrribute:*/
+    if(file == '' || file == undefined || file == null){
     file = elmnt.getAttribute("w3-include-html");
+    }
     if (file) {
       /*make an HTTP request using the attribute value as the file name:*/
       xhttp = new XMLHttpRequest();
@@ -99,6 +101,7 @@ function includeHTML() {
                                                                                 <tr>
                                                                                     <td valign="top" class="TextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
 
+<input type="button" value="Next" onClick="includeHTML('jvmArchitecture.html')"/>
                                                                                        <div w3-include-html="jdkjrejvm.html"></div> 
 <script>
 includeHTML();
