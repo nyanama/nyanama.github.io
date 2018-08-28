@@ -15,6 +15,14 @@ function homeButton(){
       $("#includeContent").load('jdkjrejvm.html');
 }
 
+function changeEvent(sel){
+     if(sel.value == -1)
+       return;
+     $("#includeContent").load(myArr[sel.value]);
+     i = sel.value;
+}
+
+
 </script>
 <head>
     <!-- NAME: 1:3 COLUMN -->
@@ -89,7 +97,12 @@ function homeButton(){
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<select onchange="changeEvent(this)">
+  <option value="-1">Select</option>
+  <option value="0">JVM Architecture</option>
+  <option value="1">Design Patterns</option>
+</select>
+&emsp;
 <input type="button" value="Home" onClick="homeButton()"/>
 &emsp;
 <input type="button" value="Next" onClick="nextButton()"/> 
