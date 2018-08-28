@@ -1,0 +1,74 @@
+<html>
+<style>
+pre {
+    width: 95%;
+}
+body{
+	padding-top: 10px;
+    padding-right: 80px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    font-family: 'Adamina';font-size: 20px;
+}
+
+</style>
+<header>
+<link rel='stylesheet' id='prism-css-css'  href='prism.css'/>
+<link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
+<script type='text/javascript' src='prism.js'></script>
+</header>
+<body>
+<h1>Core Java</h1>
+<h3>1. JVM Architecture</h3>
+
+<p>JVM has three components
+<ul>
+<li>Class Loader Subsytem</li>
+<li>Runtime Data Area</li>
+<li>Execution Engine</li>
+</ul>
+</p>
+<img src="JVMArchitecture.png"/>
+
+<h4>Class Loader Subsystem</h4>
+<p>
+Class loader subsystem is responsible to load and initialize the .class files.
+This class loader subsytem has three phases
+</p>
+<img src="classloadersubsystem.png"/>
+
+<ul>
+<li>Load</li>
+<p>Loads the bytecode to the memory.It loads all the classes from classpath and classes that are required to execute like rt.jar and some .class files from jre/lib/ext. </p>
+<li>Link</li>
+<p>Link phase again has three phases</p>
+<ul>
+<li>Verify</li>
+<p>Verifies the bytecode. </p>
+<li>Prepare</li>
+<p>Allocates memory for the class level variables and assignes default values. 
+<br>For example:
+<pre><code class="language-java">
+public static boolean isTrue = true;
+//In this phase memory will be allocated to isTrue and assigns with default value false
+</code>
+</pre>
+</p>
+<li>Resolve</li>
+<p> Finds any symbolic references in the code and resolves. (like references to other class or constant pool)  </p>
+</ul>
+<li>Initialize</li>
+<p>Initializes the class level variables with actual values. For the above isTrue variable assigns to the actual value true</p>
+</ul>
+
+<h4>Runtime Data Area</h4>
+<p>Runtime Data Area classified into 5 types</p>
+<ul>
+<li>Method/Class Area</li>
+<li>Heap</li>
+<li>Java Stack</li>
+<li>PC Registre</li>
+<li>Native Method Stack</li>
+</ul>
+</body>
+</html>

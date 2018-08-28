@@ -1,0 +1,88 @@
+<html>
+<style>
+pre {
+    width: 95%;
+}
+body{
+	padding-top: 10px;
+    padding-right: 80px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    font-family: 'Adamina';font-size: 20px;
+}
+
+</style>
+<header>
+<link rel='stylesheet' id='prism-css-css'  href='prism.css'/>
+<link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
+<script type='text/javascript' src='prism.js'></script>
+</header>
+<body>
+<h1>Design Patterns</h1>
+<h3>Design Patterns have two main usages in software development.</h3>
+
+<h3>1. Common platform for developers</h3>
+<p>A design pattern is a general reusable solution to a commonly occurring problem in software design. It is a template for how to solve a problem that can be used in many different situations. Patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.</p>
+
+<h3>2. Best Practices</h3>
+Design patterns have been evolved over a long period of time and they provide best solutions to certain problems faced during software development. Learning these patterns helps unexperienced developers to learn software design in an easy and faster way.
+<h3>Types of design patterns</h3>
+<ul>
+<li> Creational</li>
+<p>Creational patterns deal with object creation i.e they look at ways to solve design issues arising out of creation of objects.</p>
+<li> Structural</li>
+<p>Structural patterns ease the design by identifying a simple way to realize relationships between entities.</p>
+<li> Behavioural </li>
+<p>Behavioral patterns identify common communication patterns between objects and realize these patterns.</p>
+</ul>
+
+<h4>Creational Design Patterns</h4>
+<table id="patterns" border="1">
+<tbody>
+<tr style="background:#e6e6e6;font-size:1.15em;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">
+<td style="width:22%;text-align:center;font-weight:600;"><strong>Pattern Name</strong></td>
+<td style="width:60%;text-align:center;"><strong>Pattern Description</strong></td>
+</tr>
+<tr>
+<td style="font-weight:600;text-align:center;">Singleton</td>
+<td>This pattern ensures a class has only one instance and provides a global(app-level) point of access to it.</td>
+</tr>
+<tr>
+<td style="font-weight:600;text-align:center;">Prototype</td>
+<td>Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.</td>
+</tr>
+<tr>
+<td style="font-weight:600;text-align:center;">Factory Method</td>
+<td>Deals with the problem of creating related objects without specifying the exact class of object that will be created.</td>
+</tr>
+<tr>
+<td style="font-weight:600;text-align:center;">Abstract Factory</td>
+<td>Provides an interface for creating families of related or dependent objects without specifying their concrete classes.</td>
+</tr>
+<tr>
+<td style="font-weight:600;text-align:center;">Builder</td>
+<td>Separates the construction of a complex object from its representation, thus enabling the same construction process to create various representations.</td>
+</tr>
+</tbody></table>
+
+<h4>Singleton Design Patterns</h4>
+<pre><code class="language-java">
+	public class SingletonExample {
+    
+	//variable to access class level
+    private static SingletonExample instance;
+    
+    //private constructor to avoid client applications to use constructor
+    private SingletonExample(){}
+
+	//static method to return single object everytime
+    public static SingletonExample getInstance(){
+	if(instance == null){
+		instance = new SingletonExample()
+	}
+    return instance;
+    }
+}
+</code></pre>
+</body>
+</html>
