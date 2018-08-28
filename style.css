@@ -382,15 +382,7 @@ footer a:hover {
   padding:10px 0;
 }
 
-        body,
-        #bodyTable,
-        #bodyCell {
-            height: 100% !important;
-            margin: 0;
-            padding: 0;
-            width: 100% !important;
-        }
-        
+       
         table {
             border-collapse: collapse;
         }
