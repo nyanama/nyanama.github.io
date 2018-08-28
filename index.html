@@ -13,13 +13,14 @@ function nextButton(){
 function homeButton(){
       i = 0;
       $("#includeContent").load('jdkjrejvm.html');
+      $("topicsList").val("-1");
 }
 
 function changeEvent(sel){
      if(sel.value == -1)
        return;
      $("#includeContent").load(myArr[sel.value]);
-     i = sel.value;
+     i = sel.value + 1;
 }
 
 
@@ -97,7 +98,7 @@ function changeEvent(sel){
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<select onchange="changeEvent(this)">
+<select id="topicsList" onchange="changeEvent(this)">
   <option value="-1">Select</option>
   <option value="0">JVM Architecture</option>
   <option value="1">Design Patterns</option>
