@@ -21,7 +21,7 @@ function changeEvent(sel){
      if(sel.value == -1)
        return;
      $("#includeContent").load(myArr[sel.value]);
-     i = sel.value + 1;
+     i = Number(sel.value) + 1;
 }
 
 
