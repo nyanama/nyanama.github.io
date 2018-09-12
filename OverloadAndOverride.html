@@ -1,0 +1,97 @@
+<link rel='stylesheet' id='prism-css-css'  href='prism.css'/>
+<script type='text/javascript' src='prism.js'></script>
+
+<h1>Difference Between Method Overloading and Overriding</h1>
+
+<h3>Differences</h3>
+
+<table border="1">
+<tr>
+<th>Overloading</th>
+<th>Overriding</th>
+</tr>
+
+<tr>
+<td><p> Creating the multiple methods in a class with same name and different signature.</p></td>
+<td><p> Creating a method in parent and child class with same name and signature.</p></td>
+</tr>
+
+<tr>
+<td><p> Method names should be the same with different arguments.</p></td>
+<td><p> Method names and arguments should be the same.</p></td>
+</tr>
+
+<tr>
+<td><p> Return type can be different (we can change the return type).</p></td>
+<td><p> Return type can be same or a co variant (we can not have different return type exept co varian).</p></td>
+</tr>
+
+<tr>
+<td><p> It increases the redability of the code.</p></td>
+<td><p> To override the existing implementation of the parent class.</p></td>
+</tr>
+
+<tr>
+<td><p> Binds the appropriate methods at comiletime.</p></td>
+<td><p> Binds the appropriate methods at runtime.</p></td>
+</tr>
+
+<tr>
+<td><p> Static methods can be overloaded, as this is compile time binding (static methods also binds at compiletime).</p></td>
+<td><p> Can not override static methods as overriding is runtime and static methods are at compiletime.</p></td>
+</tr>
+</table>
+
+<p>
+<h4>Questions</h4>
+
+<p>What is the output?</p>
+<pre><code class="language-java">
+public class OverloadingExample {
+	public static void main(String[] args) {
+    	OverloadingExample test = new OverloadingExample();
+		System.out.println(test.methodOne(null));
+	}
+	public String methodOne(String str) {
+		return "String";
+	}
+	public String methodOne(Object str) {
+		return "Object";
+	}
+}
+</code></pre>
+<p style="color:red">	Answwer is "String" <br>
+	Reason: If more than one method is applicable and accesable to a method innvocation then comilar will give preference to subclass arguments.
+	Here object is super class and String is sub class so sub class argument method called and returned String. </p>
+
+<p>What is the output?</p>
+<pre><code class="language-java">
+public class OverloadingExample {
+	public static void main(String[] args) {
+    	OverloadingExample test = new OverloadingExample();
+		System.out.println(test.methodOne(null));
+	}
+	public String methodOne(String str) {
+		return "String";
+	}
+	public String methodOne(Object str) {
+		return "Object";
+	}
+	public String methodOne(Integer str) {
+		return "Object";
+	}
+
+}
+</code></pre>
+	<p style="color:red">Answwer is - Compile time error - The method methodOne(String) is ambiguous for the type Test <br>
+	Reason: As we discussed if multiple methods are eligible to access a method call it will give preference to the method with sub class arguments 
+	but here we have two methods with sub class arguments String and Integer. So compiler can not decide which method to invoke and gives an error.</p>
+
+	<p>What is co-variant method overriding?</p>
+	<p style="color:red">Before Java 1.5 we have a hard rule saying that for method overriding the return type should be same for parent and child class methods.
+	But from 1.5 the restriction is relaxed. Now we can have same return type or subclass of the return type of parent class.</p>
+	
+</p>
+
+
+
