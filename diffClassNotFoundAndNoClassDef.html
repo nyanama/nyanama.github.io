@@ -1,0 +1,41 @@
+<link rel='stylesheet' id='prism-css-css'  href='prism.css'/>
+<script type='text/javascript' src='prism.js'></script>
+
+<h1>Difference Between ClassNotFoundException and NoClassDefFoundError</h1>
+
+<h3>Differences</h3>
+
+<table border="1">
+<tr>
+<th>ClassNotFoundException</th>
+<th>NoClassDefFoundError</th>
+</tr>
+
+<tr>
+<td><p> Runtime</p></td>
+<td><p> Runtime</p></td>
+</tr>
+
+<tr>
+<td><p> Its a checked exception</p></td>
+<td><p> Its an Error</p></td>
+</tr>
+
+<tr>
+<td><p> Its an exception that will thrown when we try to load a class using Class.forName()</p></td>
+<td><p> Its an error that will thrown when class available at compile time and not available at runtime.</p></td>
+</tr>
+
+<tr>
+<td><p> It is thrown by methods like Class.forName() , loadClass() and findSystemClass(). </p></td>
+<td><p> It is thrown by Java Runtime system.</p></td>
+</tr>
+<tr>
+<td><p> It occures when class path was not updated with required jar files. </p></td>
+<td><p> It ocuures when a class file missed at runtime due to some runtime dependency missing. But the class file should be there at compile time.</p></td>
+</tr>
+
+</table>
+
+
+
